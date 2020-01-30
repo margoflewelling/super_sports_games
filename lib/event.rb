@@ -1,5 +1,5 @@
 class Event
-attr_reader :name, :ages
+attr_reader :name, :ages, :mean
 
   def initialize(name, ages)
     @name = name
@@ -20,11 +20,11 @@ attr_reader :name, :ages
  sum += age
  end
  mean = sum.to_f / ages.length
- mean
  @mean = mean
  end
 
  def standard_deviation_age
+   average_age
    square_differences = []
    ages.each do |age|
    square_differences << ((age - @mean) * (age - @mean))
